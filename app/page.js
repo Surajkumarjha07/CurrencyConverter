@@ -94,7 +94,7 @@ export default function Home() {
         </div>
 
         <div className="mt-7 align-middle flex">
-          {!isNaN(amount)?amount:""} {fromCurrency} = {data.rates && (amount * (data?.rates && data.rates[toCurrency])).toFixed(2)}{toCurrency}
+          {!isNaN(amount)?amount:""} {fromCurrency} = {!isNaN(amount) ? data.rates && (amount * (data?.rates && data.rates[toCurrency])).toFixed(2):""}{toCurrency}
         </div>
 
         <input type="submit" value={'Convert Currency'} className="bg-pink-800 text-white p-2 px-8 cursor-pointer rounded-lg mt-10 " onClick={convertCurrency} />
